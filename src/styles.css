@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+/*
+Alignment classes
+*/
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+}
+
+/* 
+Padding classes
+*/
+.pb-1 {
+  padding-bottom: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 16px;
+}
+
+.pb-3 {
+  padding-bottom: 32px;
+}
+
+.pb-4 {
+  padding-bottom: 64px;
+}
+
+.pb-5 {
+  padding-bottom: 128px;
+}
+
+/* 
+Margin classes
+*/
+.mr-1 {
+  margin-right: 8px;
+}
+.mr-formField {
+  width: 200px;
+  margin-right: 100px;
+}
+
+/* 
+Typography classes
+*/
+h1 {
+  font-family: 'cabin', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 96px;
+  line-height: 112%;
+  letter-spacing: -1.5px;
+  color: #20283A;
+}
+
+h2 {
+  font-family: 'cabin', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 60px;
+  line-height: 120%;
+  letter-spacing: -0.5px;
+  border: none;
+  color: #20283A;
+}
+
+h3 {
+  font-family: 'cabin', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 116.7%;
+  letter-spacing: 0px;
+  color: #20283A;
+}
+
+h4 {
+  font-family: 'cabin', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 123.5%;
+  letter-spacing: 0.25px;
+  color: #20283A;
+}
+
+h5 {
+  font-family: 'cabin', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 133.4%;
+  letter-spacing: 0px;
+  color: #20283A;
+}
+
+h6 {
+  font-family: 'cabin', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 160%;
+  letter-spacing: 0.15px;
+  color: #20283A;
+}
+
+body {
+  font-family: 'cabin', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+  color: #20283A;
+}
+
+.large {
+  font-size: 34px;
+  line-height: 123.5%;
+  letter-spacing: 0.25px;
+}
+
+em, b, strong, .emphasis {
+  font-weight: 700;
+}
+
+a, .link {
+  text-decoration: underline;
+  color: #0D47A1;
+}
+
+button, .button {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 175%;
+  letter-spacing: 0.46px;
+  text-transform: uppercase;
+}
+
+label, .inputLabel {
+  font-size: 12px;
+  line-height: 100%;
+}
+
+ol.lower-roman {
+  list-style: lower-roman;
+}
+
+.helper {
+  background-color: #ebebeb;
+}
+
+.helperText {
+  font-size: 12px;
+  line-height: 170%;
+  letter-spacing: 0.4px;
+}
+
+.required {
+  color: #cc0001;
+}
+
+.inputText {
+  line-height: 120%;
+}
+
+.tooltip {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 140%;
+  letter-spacing: 0px;
+}
+
+code, .sourceCode {
+  font-family: 'Source Code Pro', 'Segoe UI Mono', 'Courier New', 'Monaco', 'monospace';
+}
+
+/* 
+Image classes
+*/
+.logo {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.diagram {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+@media screen and (max-width: 992px) {
+  .logo {
+    width: 50%;
+  }
+
+  .diagram {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    width: 60%;
+  }
+
+  .diagram {
+    width: 100%;
+  }
+}
+
+/* Left blockquote indent */
+.left-indent {
+  border-left: 8px solid #1976D2;
+  padding-left: 8px;
+}
+
+/*Width classes*/
+.width_30 {
+  width: 30%;
+}
