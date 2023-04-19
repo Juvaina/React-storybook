@@ -1,4 +1,4 @@
-import Alert from "../components/BRAlert";
+import Alert from "../components/P2Alert";
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
 
 <style>
@@ -70,5 +70,36 @@ import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
 export const Template = (args) => <Alert {...args} />;
 
 <Canvas>
-  <Story name="Default">{Template.bind({})}</Story>
+  <Story name="Default" args={{ variant: "primary" }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
+
+<ArgsTable of={Alert} story="Default" />
+
+<Canvas>
+  <Story name="Basin with Icon" args={{ variant: "primary", icon: "true" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Alert} story="Basin with Icon" />
+
+<Canvas>
+  <Story name="Links" args={{ variant: "primary", link: "true" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Alert} story="Links" />
+
+<Canvas>
+  <Story
+    name="Additional Content"
+    args={{ variant: "primary", AdditionalContent: "true" }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Alert} story="Additional Content" />

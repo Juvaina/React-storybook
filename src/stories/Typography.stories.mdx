@@ -1,0 +1,394 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  DocsContainer,
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+} from "@storybook/addon-docs";
+//import Table from 'react-bootstrap/Table';
+
+<Meta title="Styling Guide/Typography" />
+
+<style>
+  {`
+.h1 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 60px;
+    color: #20283A;
+    }
+
+    .h1_mobile {
+            font-family: 'cabin', Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 36px;
+            color: #20283A;
+        }
+
+
+
+    .h2 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    border: none;
+    color: #20283A;
+    }
+
+    .h2_mobile {
+            font-family: 'cabin', Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 26px;
+            color: #20283A;
+        }
+
+    .h3 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    color: #20283A;
+    }
+
+    .h3_mobile {
+            font-family: 'cabin', Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: #20283A;
+        }
+
+    .h4 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 30px;
+    color: #20283A;
+    }
+
+    .h4_mobile {
+            font-family: 'cabin', Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: #20283A;
+        }
+
+    .h5 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    color: #20283A;
+    }
+
+    .h5_mobile {
+            font-family: 'cabin', Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            color: #20283A;
+        }
+
+
+    .h6 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #20283A;
+    }
+
+    .body {
+    font-family: 'cabin', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #20283A;
+    }
+
+    .body_mobile {
+    font-family: 'cabin', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #20283A;
+    }
+
+    .small {
+    font-family: 'cabin', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #20283A;
+    }
+
+    .small_mobile {
+    font-family: 'cabin', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #20283A;
+    }
+
+    .extra_small {
+    font-family: 'cabin', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #20283A;
+    }
+
+    .Medium {
+    font-weight: 500;
+    }
+
+    .bold {
+    font-weight: 700;
+    }
+
+    .link {
+    text-decoration: underline;
+    color: #0D47A1;
+    }
+
+    .button {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 175%;
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+    }
+
+    .inputLabel {
+    font-size: 12px;
+    line-height: 100%;
+    }
+
+    .helperText {
+    font-size: 12px;
+    line-height: 170%;
+    letter-spacing: 0.4px;
+    }
+
+    .inputText {
+    line-height: 120%;
+    }
+
+    .tooltip {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 140%;
+    letter-spacing: 0px;
+    }
+
+    .sourceCode {
+    font-family: 'Source Code Pro', 'Segoe UI Mono', 'Courier New', 'Monaco', 'monospace';
+    }
+
+    tr td {
+      border: 0px !important;
+    }
+
+  `}
+</style>
+
+<h4 className="h4">Typography</h4>
+
+<p className="body">
+  Typography are used to ensure that there is clear hierarchies of content and
+  information are organised appropriately based on its importance. With good
+  typography usage, the content will be communicated clearly, effectively, and
+  efficiently to the audience.
+</p>
+
+<h5 className="h5">Typeface</h5>
+<p className="body">
+  The main typeface used for Polymer 2.0 is cabin. It is a typeface carefully
+  crafted and designed for computer screens.
+</p>
+
+<h6 className="h6">Desktop</h6>
+
+<p className="body">Fonts for desktop view</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th className="body">Style Name </th>
+      <th className="body ">Weight </th>
+      <th className="body ">size </th>
+      <th className="body ">Example </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="body">H1</td>
+      <td className="body">Bold</td>
+      <td className="body">55|60</td>
+      <td className="h1">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">H2</td>
+      <td className="body">Bold</td>
+      <td className="body">36|42</td>
+      <td className="h2">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">H3</td>
+      <td className="body">Bold</td>
+      <td className="body">28|32</td>
+      <td className="h3">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">H4</td>
+      <td className="body">Bold</td>
+      <td className="body">26|30</td>
+      <td className="h4">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">H5</td>
+      <td className="body">Bold</td>
+      <td className="body">22|26</td>
+      <td className="h5">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">H6</td>
+      <td className="body">Bold</td>
+      <td className="body">20|24</td>
+      <td className="h6">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">Body</td>
+      <td className="body">Medium</td>
+      <td className="body">18|22</td>
+      <td className="body Medium">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">Body</td>
+      <td className="body">Regular</td>
+      <td className="body">18|22</td>
+      <td className="body ">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">Small</td>
+      <td className="body">Bold</td>
+      <td className="body">16|20</td>
+      <td className="small bold">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">Small</td>
+      <td className="body">Medium</td>
+      <td className="body">16|20</td>
+      <td className="small Medium">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">
+        Extra <br /> Small
+      </td>
+      <td className="body">Medium</td>
+      <td className="body">14|18</td>
+      <td className="extra_small Medium">
+        The crazy fox jumped over the brown dog.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 className="h6">Mobile</h6>
+
+<p className="body">Fonts for mobile view</p>
+
+<table class="table" style={{ width: "100%" }}>
+  <thead>
+    <tr>
+      <th className="body ">Style Name</th>
+      <th className="body ">Weight</th>
+      <th className="body ">size</th>
+      <th className="body ">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="body">H1</td>
+      <td className="body">Bold</td>
+      <td className="body">30|36</td>
+      <td className="h1_mobile">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">H2</td>
+      <td className="body">Bold</td>
+      <td className="body">22|26</td>
+      <td className="h2_mobile">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">H3</td>
+      <td className="body">Bold</td>
+      <td className="body">20|24</td>
+      <td className="h3_mobile">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">H4</td>
+      <td className="body">Bold</td>
+      <td className="body">18|22</td>
+      <td className="h4_mobile">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">H5</td>
+      <td className="body">Bold</td>
+      <td className="body">16|20</td>
+      <td className="h5_mobile">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">Body</td>
+      <td className="body">Medium</td>
+      <td className="body">16|20</td>
+      <td className="body_mobile Medium">
+        The crazy fox jumped over the brown dog.
+      </td>
+    </tr>
+    <tr>
+      <td className="body">Body</td>
+      <td className="body">Regular</td>
+      <td className="body">16|20</td>
+      <td className="body_mobile ">The crazy fox jumped over the brown dog.</td>
+    </tr>
+    <tr>
+      <td className="body">Small</td>
+      <td className="body">Bold</td>
+      <td className="body">14|16</td>
+      <td className="small_mobile bold">
+        The crazy fox jumped over the brown dog.
+      </td>
+    </tr>
+    <tr>
+      <td className="body">Small</td>
+      <td className="body">Medium</td>
+      <td className="body">14|16</td>
+      <td className="small_mobile Medium">
+        The crazy fox jumped over the brown dog.
+      </td>
+    </tr>
+  </tbody>
+</table>

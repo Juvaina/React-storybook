@@ -1,0 +1,195 @@
+/* 
+Typography classes
+*/
+h1 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+      font-style: normal;
+      font-weight: 700 !important;
+      font-size: 55px !important;
+      line-height: 60px !important;
+      color: #20283A;
+  }
+  
+ @media screen and (max-width: 425px) {
+    h1 {
+      font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+      font-style: normal;
+      font-weight: 700 !important;
+      font-size: 30px !important;
+      line-height: 36px !important;
+      color: #20283A;
+    }}
+  
+  h2 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 36px !important;
+    line-height: 42px !important;
+    border: none;
+    color: #20283A;
+  }
+  
+  h2 {
+      font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+      font-style: normal;
+      font-weight: 700 !important;
+      font-size: 36px !important;
+      line-height: 42px !important;
+      border: none;
+      color: #20283A;
+      }
+  
+      @media screen and (max-width: 426px) {
+          h2 {
+              font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+              font-style: normal;
+              font-weight: 700 !important;
+              font-size: 22px !important;
+              line-height: 26px !important;
+              color: #20283A;
+          }
+      }
+  
+  h3 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 28px !important;
+    line-height: 32px !important;
+    color: #20283A;
+  }
+  @media screen and (max-width: 426px) {
+    h3 {
+        font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+        font-style: normal;
+        font-weight: 700 !important;
+        font-size: 20px !important;
+        line-height: 24px !important;
+        color: #20283A;
+    }
+  }
+  
+  h4 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 26px !important;
+    line-height: 30px!important;
+    color: #20283A;
+  }
+  
+  @media screen and (max-width: 426px) {
+    h4 {
+        font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+        font-style: normal;
+        font-weight: 700 !important;
+        font-size: 18px !important;
+        line-height: 22px!important;
+        color: #20283A;
+    }
+  }
+  
+  h5 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 22px !important;
+    line-height: 26px !important;
+    color: #20283A;
+  }
+  
+  @media screen and (max-width: 426px) {
+    h5 {
+        font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+        font-style: normal;
+        font-weight: 700 !important;
+        font-size: 16px !important;
+        line-height: 20px !important;
+        color: #20283A;
+    }
+  }
+  
+  h6 {
+    font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    line-height: 24px !important;
+    color: #20283A;
+  }
+  
+  p, body {
+    font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 22px !important;
+    color: #20283A;
+  }
+  @media screen and (max-width: 426px) {
+  .body {
+    font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    color: #20283A;
+    }
+}
+
+    .small {
+        font-family: 'cabin', Helvetica, Arial, sans-serif  !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        line-height: 20px !important;
+        color: #20283A;
+        }
+  
+    
+@media screen and (max-width: 426px) {
+    .small {
+        font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        font-size: 14px !important;
+        line-height: 16px !important;
+        color: #20283A;
+        }
+}
+  .Medium {
+    font-weight: 500 !important;
+  }
+  
+  .large {
+    font-size: 34px  !important;
+    line-height: 123.5% !important;
+    letter-spacing: 0.25px!important;
+  }
+
+  .extra_small {
+    font-family: 'cabin', Helvetica, Arial, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    color: #20283A;
+    }
+
+    .link {
+        text-decoration: underline;
+        color: #0D47A1;
+        }
+  
+  .bold {
+    font-weight: 700 !important;
+  }
+  
+  em,
+  b,
+  strong,
+  .emphasis {
+    font-weight: 700;
+  }
+  

@@ -1,0 +1,122 @@
+import Grid from "../components/P2Grid";
+import {
+  DocsContainer,
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+} from "@storybook/addon-docs";
+
+<style>
+  {`
+    
+    .h4 {
+        font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 123.5%;
+        letter-spacing: 0.25px;
+    }
+
+    .h5 {
+        font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 133.4%;
+        letter-spacing: 0px;
+    }
+
+    .h6 {
+        font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 160%;
+        letter-spacing: 0.15px;
+        color: #20283A;
+    }
+
+    .body {
+        font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0.15px;
+    }
+
+    .link {
+        text-decoration: underline;
+    }
+
+    .small {
+        font-size: 15px;
+    }
+
+    .sourceCode {
+        font-family: 'Source Code Pro', 'Segoe UI Mono', 'Courier New', 'Monaco', 'monospace';
+    }
+
+    .sourceCode-background {
+        background-color: #F8F8F8;
+        padding: 2px 4px;
+        border-radius: 4px;
+        border: 1px solid #EEEEEE;
+    }
+
+`}
+</style>
+
+<Meta
+  title="Components/Grid"
+  component={Grid}
+  argTypes={{
+    gridSize: {
+      control: { type: "number", min: 1, max: 12 },
+    },
+  }}
+/>
+
+<h4 className="h4">Grid</h4>
+
+<p className="body">
+  Grid helps to tie different design elements together to achieve effective
+  hierarchy, alignment and consistency, with less effort.
+</p>
+<p className="body">
+  Biome uses a 12 column grid with a gutter of 16px. 12 columns are divisible by
+  2 and 3, making it easy to accomodate different content needs.
+</p>
+
+export const Template = (args) => (
+  <div className="row gy-3">
+    <Grid {...args}>
+      <div style={{ backgroundColor: "#E3F2FD", height: "60px" }}></div>
+    </Grid>
+    <Grid {...args}>
+      <div style={{ backgroundColor: "#E3F2FD", height: "60px" }}></div>
+    </Grid>
+    <Grid {...args}>
+      <div style={{ backgroundColor: "#E3F2FD", height: "60px" }}></div>
+    </Grid>
+    <Grid {...args}>
+      <div style={{ backgroundColor: "#E3F2FD", height: "60px" }}></div>
+    </Grid>
+    <Grid {...args}>
+      <div style={{ backgroundColor: "#E3F2FD", height: "60px" }}></div>
+    </Grid>
+    <Grid {...args}>
+      <div style={{ backgroundColor: "#E3F2FD", height: "60px" }}></div>
+    </Grid>
+  </div>
+);
+
+<Canvas>
+  <Story name="Base" args={{ gridSize: 1 }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Grid} story="Base" />

@@ -1,4 +1,4 @@
-import Container from "../components/BRContainer";
+import Container from "../components/P2Container";
 import {
   DocsContainer,
   Meta,
@@ -93,7 +93,11 @@ import {
 
 <p className="body">Used as a parent element to wrap around all content.</p>
 
-export const Template = (args) => <Container {...args}></Container>;
+export const Template = (args) => (
+  <Container {...args}>
+    <div style={{ backgroundColor: "#E3F2FD", height: "60px" }}></div>
+  </Container>
+);
 
 <Canvas>
   <Story name="Base" parameters={{ controls: { hideNoControlsWarning: true } }}>

@@ -1,4 +1,4 @@
-import Button from "../components/P2Button";
+import Table from "../components/P2Table";
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
 
 <style>
@@ -63,11 +63,11 @@ import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
 `}
 </style>
 
-<Meta title="Components/Button" component={Button} />
+<Meta title="Components/Table" component={Table} />
 
-<h4 className="h4">Button</h4>
+<h4 className="h4">Table</h4>
 
-export const Template = (args) => <Button {...args} />;
+export const Template = (args) => <Table {...args} />;
 
 <Canvas>
   <Story name="Default">{Template.bind({})}</Story>
