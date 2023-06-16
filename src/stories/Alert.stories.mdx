@@ -1,105 +1,52 @@
 import Alert from "../components/P2Alert";
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
 
-<style>
-  {`
-    
-    .h4 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 34px;
-        line-height: 123.5%;
-        letter-spacing: 0.25px;
-    }
-
-    .h5 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 133.4%;
-        letter-spacing: 0px;
-    }
-
-    .h6 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 160%;
-        letter-spacing: 0.15px;
-        color: #20283A;
-    }
-
-    .body {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        letter-spacing: 0.15px;
-    }
-
-    .link {
-        text-decoration: underline;
-    }
-
-    .small {
-        font-size: 15px;
-    }
-
-    .sourceCode {
-        font-family: 'Source Code Pro', 'Segoe UI Mono', 'Courier New', 'Monaco', 'monospace';
-    }
-
-    .sourceCode-background {
-        background-color: #F8F8F8;
-        padding: 2px 4px;
-        border-radius: 4px;
-        border: 1px solid #EEEEEE;
-    }
-
-`}
-</style>
-
 <Meta title="Components/Alert" component={Alert} />
 
-<h4 className="h4">Alert</h4>
+<h1>Alert</h1>
+<p>
+  Alert bars are designed to catch the visitor's attention and provide quick and
+  concise information about a situation that may require their immediate
+  attention.
+</p>
+<h4>Usage</h4>
+<ul>
+  <li>
+    Success - use to let users know that they have successfully completed an
+    action.
+  </li>
+  <li>
+    Warning - use this to inform user of a significant change that will take
+    place before they perform an action. This helps users to anticipate that
+    they need to pay attention before they proceed to take action.
+  </li>
+  <li>
+    Danger - use to alert users that something has gone wrong or if they have
+    tried to do anything but a problem occurred during the session
+  </li>
+</ul>
 
-export const Template = (args) => <Alert {...args} />;
+export const Template = (args) => (
+  <Alert {...args}>A simple alert check it out!</Alert>
+);
 
 <Canvas>
-  <Story name="Default" args={{ variant: "primary" }}>
+  <Story name="Base" args={{ variant: "success" }}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable of={Alert} story="Default" />
+<ArgsTable of={Alert} story="Base" />
 
-<Canvas>
-  <Story name="Basin with Icon" args={{ variant: "primary", icon: "true" }}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable of={Alert} story="Basin with Icon" />
-
-<Canvas>
-  <Story name="Links" args={{ variant: "primary", link: "true" }}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable of={Alert} story="Links" />
+<h3>Alerts with CTA</h3>
 
 <Canvas>
   <Story
-    name="Additional Content"
-    args={{ variant: "primary", AdditionalContent: "true" }}
+    name="With CTA"
+    args={{ variant: "success", cta: true, Heading: "Notification Title" }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable of={Alert} story="Additional Content" />
+<ArgsTable of={Alert} story="With CTA" />

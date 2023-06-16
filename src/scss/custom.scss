@@ -1,0 +1,95 @@
+
+$primary: #0C8188;
+// $secondary: #C3141E;
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$tooltip-bg:white;
+$tooltip-color:black;
+$tooltip-arrow-color:red;
+$tooltip-margin:5px blue;
+$tooltip-arrow-width: 22.8px;
+$tooltip-arrow-height: 10.4px;
+
+// Create your own map
+$custom-colors: (
+  "primary-1": #0C8188,
+  "primary-2": #C3141E,
+  "lighter-teal": #EFF8FA,
+  "light-teal": #64C8C8,
+  "dark-teal": #085054
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$utilities: (
+  "card-width": (
+    property: width,
+    class: cw,
+    values: (
+      1: 200px,
+      2: 288px,
+      3: 304px,
+      4: 500px,
+      5: 616px,
+      auto: auto
+    )
+  ),
+  "card-height": (
+    property: height,
+    class: ch,
+    values: (
+      1: 224px,
+      2: 245px,
+      3: 210px,
+      4: 253px,
+      5: 290px,
+      auto: auto
+    )
+  )
+);
+
+.accordion {
+  --bs-accordion-btn-icon: url("../resources/plus-circle-fill.svg") !important;
+  --bs-accordion-btn-active-icon: url("../resources/dash-circle-fill.svg") !important;
+  --bs-accordion-btn-icon-transform: rotate(0deg) !important;
+  --bs-accordion-btn-active-color: var(--bs-body-color) !important;
+}
+
+.accordion-button {
+  color: $primary !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color: black !important;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 15px !important;
+  height: 15px !important;
+  background-color: #0C8188 !important;
+  border-radius: 50%
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: grey !important;
+  border-radius: 50%;
+  width:32px !important;
+  height: 32px;
+  top: 40% !important;
+}
+
+.carousel-indicators {
+  top: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

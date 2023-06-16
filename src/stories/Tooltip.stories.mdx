@@ -1,0 +1,27 @@
+import Tooltip from "../components/P2Tooltip";
+import Button from "../components/P2Button";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+
+<Meta title="Components/Tooltip" component={Tooltip} />
+
+<h1>Tooltip</h1>
+
+export const Template = (args) => (
+  <Tooltip {...args}>
+    <Button
+      variant="btn btn-secondary"
+      data-bs-toggle="tooltip"
+      data-bs-placement="bottom"
+      data-bs-title="Tooltip on bottom"
+      label="Tooltip on Bottom"
+    ></Button>
+  </Tooltip>
+);
+
+<Canvas>
+  <Story name="Base" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Tooltip} story="Base" />

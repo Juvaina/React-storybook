@@ -1,74 +1,236 @@
 import Card from "../components/P2Card";
+import Callout from "../components/P2Card/P2CalloutCard";
+import Carousel from "../components/P2Carousel";
+import cardImage from "../resources/icon_80_BuyingaFlat.svg";
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
-
-<style>
-  {`
-    
-    .h4 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 34px;
-        line-height: 123.5%;
-        letter-spacing: 0.25px;
-    }
-
-    .h5 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 133.4%;
-        letter-spacing: 0px;
-    }
-
-    .h6 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 160%;
-        letter-spacing: 0.15px;
-        color: #20283A;
-    }
-
-    .body {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        letter-spacing: 0.15px;
-    }
-
-    .link {
-        text-decoration: underline;
-    }
-
-    .small {
-        font-size: 15px;
-    }
-
-    .sourceCode {
-        font-family: 'Source Code Pro', 'Segoe UI Mono', 'Courier New', 'Monaco', 'monospace';
-    }
-
-    .sourceCode-background {
-        background-color: #F8F8F8;
-        padding: 2px 4px;
-        border-radius: 4px;
-        border: 1px solid #EEEEEE;
-    }
-
-`}
-</style>
 
 <Meta title="Components/Card" component={Card} />
 
-<h4 className="h4">Card</h4>
+<h1>Card</h1>
+<p>
+  Graphical representation of a piece of content containing text, images, icons
+  and links.
+</p>
+<h3>e-Service card with Icon</h3>
+<p>Card specifically designed to feature e-Services.</p>
 
-export const Template = (args) => <Card {...args} />;
+<h4>Usage</h4>
+<ul>
+  <li>Used to spotlight e-Services on a webpage</li>
+  <li>Used in the homepage to feature “Popular e-Services”</li>
+  <li>
+    Used as a personalisation module on My HDBPage for “My frequently used
+    e-Services”
+  </li>
+  <li>
+    Used on the e-Services catalogue's intent landing pages for “Popular
+    e-Services”
+  </li>
+  <li>Used on the feedback form journey for “Related e-Services”</li>
+</ul>
+
+export const Template1 = (args) => <Card {...args} />;
+export const Template2 = (args) => <Callout {...args} />;
+export const Template3 = (args) => <Carousel {...args} />;
 
 <Canvas>
-  <Story name="Default">{Template.bind({})}</Story>
+  <Story
+    name="e-Service Card"
+    args={{
+      cardproperties: "cw-1 ch-1",
+      title: "Max 55 char count advisable for this component",
+      eserviceIcon: <img src={cardImage}></img>,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
 </Canvas>
+<ArgsTable of={Card} story="e-Service Card" />
+
+<h3>Content and e-Services Card with description</h3>
+<p>Card with description and CTA button</p>
+
+<h4>Usage</h4>
+<ul>
+  <li>Used for featuring a long list of e-Services and content</li>
+  <li>
+    Used in content with titles and description with a prominent CTA button that
+    opens up to a detail page or another landing page
+  </li>
+  <li>Can used to show content inside a tab; tab as the base container</li>
+</ul>
+
+<Canvas>
+  <Story
+    name="e-Service Card with Description"
+    args={{
+      cardproperties: "cw-2",
+      title: "Lorem ipsum dolor sie amet done consec adiscin gort eli",
+      cardcontent:
+        "Dorem ipsum dolor sit amet ishuh, consectetur adipiscing elit Etiam eu turpis molestie, dictum est attewev",
+      buttonClass: "btn btn-primary-1 w-100",
+      buttonContent: "View details",
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
+</Canvas>
+<ArgsTable of={Card} story="e-Service Card with Description" />
+
+<h3>Content Card</h3>
+<p>
+  Card specifically designed to feature content for information seeking such as
+  information on policies, things to note, etc.
+</p>
+
+<h4>Usage</h4>
+<ul>
+  <li>Used to spotlight content on a webpage</li>
+  <li>Used in the homepage to feature “Recommended for you ”</li>
+  <li>
+    Used as a personalisation module on My HDBPage for “Recommended for you ”
+  </li>
+</ul>
+
+<Canvas>
+  <Story
+    name="Content Card With Icon"
+    args={{
+      cardproperties: "cw-2",
+      title: "Lorem ipsum dolor sie amet done consec adiscin gort eli",
+      cardcontent:
+        "Dorem ipsum dolor sit amet ishuh, consectetur adipiscing elit Etiam eu turpis molestie, dictum est attewev",
+      buttonClass: "link text-decoration-none w-100",
+      buttonContent: "View more >",
+      contentIcon: true,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
+</Canvas>
+<ArgsTable of={Card} story="Content Card With Icon" />
+
+<Canvas>
+  <Story
+    name="Content Card Without Icon"
+    args={{
+      cardproperties: "cw-2",
+      title: "Lorem ipsum dolor sie amet done consec adiscin gort eli",
+      cardcontent:
+        "Dorem ipsum dolor sit amet ishuh, consectetur adipiscing elit Etiam eu turpis molestie, dictum est attewev",
+      buttonClass: "link text-decoration-none w-100",
+      buttonContent: "View more >",
+      contentIcon: false,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
+</Canvas>
+<ArgsTable of={Card} story="Content Card Without Icon" />
+
+<h3>Callout card</h3>
+<p>
+  Card specifically designed to highlight and “shout” information to nudge users
+  to do a certain action.
+</p>
+
+<h4>Usage</h4>
+<ul>
+  <li>
+    Used to nudge users to perform an important action such as start an
+    e-Service
+  </li>
+  <li>Used to feature “Important information”</li>
+  <li>
+    Designed as a prominent component with a prominent CTA button to catch
+    attention
+  </li>
+</ul>
+
+<Canvas>
+  <Story
+    name="Callout Card With Icon"
+    args={{
+      cardproperties: "cw-4",
+      title:
+        "Jorem ipsum dolor sit amet, consectetur velit interdum, ac aliquet odio mattisth",
+      cardcontent:
+        "Borem ipsum dolor sit amet ehur consectetur adipiscing elit. Etiam eu turpis molestie, dictum est an the mattis th thif ellus. Sed dignissim, metus nec fringilla hinung accumsan molestie hun molestie.",
+      buttonClass: "btn btn-primary-2",
+      buttonContent: "Save now",
+      calloutIcon: true,
+    }}
+  >
+    {Template2.bind({})}
+  </Story>
+</Canvas>
+<ArgsTable of={Card} story="Callout Card With Icon" />
+
+<Canvas>
+  <Story
+    name="Callout Card Without Icon"
+    args={{
+      cardproperties: "cw-4",
+      title:
+        "Jorem ipsum dolor sit amet, consectetur velit interdum, ac aliquet odio mattisth",
+      cardcontent:
+        "Borem ipsum dolor sit amet ehur consectetur adipiscing elit. Etiam eu turpis molestie, dictum est an the mattis th thif ellus. Sed dignissim, metus nec fringilla hinung accumsan molestie hun molestie.",
+      buttonClass: "btn btn-primary-2",
+      buttonContent: "Save now",
+      calloutIcon: false,
+    }}
+  >
+    {Template2.bind({})}
+  </Story>
+</Canvas>
+<ArgsTable of={Card} story="Callout Card Without Icon" />
+
+<h3>Callout card Carousel</h3>
+
+<h4>Usage</h4>
+<ul>
+  <li>
+    Used to nudge users to perform an important action such as start an
+    e-Service
+  </li>
+  <li>Used to feature “Important information”, “notes” and “nudges”</li>
+  <li>
+    Designed as a prominent component with a prominent CTA button to catch
+    attention
+  </li>
+  <li>Designed to cater to feature more than 1 callout card</li>
+</ul>
+
+<Canvas>
+  <Story
+    name="Callout Card Carousel"
+    args={{
+      cardproperties: "cw-4 ch-5",
+      buttonClass: "btn btn-primary-2",
+      buttonContent: "Save now",
+      displayList: [
+        {
+          title:
+            "Jorem ipsum dolor sit amet, consectetur velit interdum, ac aliquet odio mattisth",
+          cardcontent:
+            "Borem ipsum dolor sit amet ehur consectetur adipiscing elit. Etiam eu turpis molestie, dictum est an the mattis th thif ellus. Sed dignissim, metus nec fringilla hinung accumsan molestie hun molestie.",
+        },
+        {
+          title:
+            "Jorem ipsum dolor sit amet, consectetur velit interdum, ac aliquet odio mattisth",
+          cardcontent:
+            "Borem ipsum dolor sit amet ehur consectetur adipiscing elit. Etiam eu turpis molestie, dictum est an the mattis th thif ellus. Sed dignissim, metus nec fringilla hinung accumsan molestie hun molestie.",
+        },
+        {
+          title:
+            "Jorem ipsum dolor sit amet, consectetur velit interdum, ac aliquet odio mattisth",
+          cardcontent:
+            "Borem ipsum dolor sit amet ehur consectetur adipiscing elit. Etiam eu turpis molestie, dictum est an the mattis th thif ellus. Sed dignissim, metus nec fringilla hinung accumsan molestie hun molestie.",
+        },
+      ],
+    }}
+  >
+    {Template3.bind({})}
+  </Story>
+</Canvas>
+<ArgsTable of={Card} story="Callout Card Carousel" />

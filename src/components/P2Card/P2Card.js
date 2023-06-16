@@ -1,19 +1,44 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+import contentImage from "../../resources/content_icon.svg";
 
-export default function P2Card() {
+export default function P2Card(props) {
+  const {
+    title,
+    eserviceIcon,
+    cardcontent,
+    cardproperties,
+    buttonContent,
+    contentIcon,
+    buttonClass,
+  } = props;
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
+    <div className={"card ecard " + cardproperties}>
+      <div
+        className="container w-25 bg-light-teal"
+        style={{
+          height: "5px",
+        }}
+      ></div>
+      {eserviceIcon != ("" || undefined) && (
+        <div className="card-body p-1">
+          <h5 className="card-title text-center">{title}</h5>
+          <div className="container d-flex justify-content-center pt-2">
+            {eserviceIcon}
+          </div>
+        </div>
+      )}
+      {cardcontent != ("" || undefined) && (
+        <div className="card-body">
+          <div className="d-flex">
+            <h5 className="card-title">{title}</h5>
+            {contentIcon ? <img src={contentImage} className="h-25"></img> : ""}
+          </div>
+          <p className="card-text">{cardcontent}</p>
+          <a href="#" className={buttonClass}>
+            {buttonContent}
+          </a>
+        </div>
+      )}
+    </div>
   );
 }

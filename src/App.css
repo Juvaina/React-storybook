@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+.footer_title {
+  color: #fff;
+  margin-bottom: 15px;
+  padding: 0 10px;
+  font-size: 22px;
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer_title {
+  padding: 20px 5px 0 5px;
+  margin-bottom: 7px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.footer_text {
+  color: #B7B7B7;
+  font-size: 14px;
+  text-transform: none; 
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.footer_text:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.social_icon {
+  font-size: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.font-resize-small{
+  margin-right: 8px;
+  font-size: 12px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  width: 50px;
+  height: 32px;
+}
+
+.font-resize-big{
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 50px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.ecard {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 16px 8px;
+gap: 16px;
+/* width: 200px; */
+/* height: 224px; */
+/* background: #FFFFFF; */
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+border-radius: 15px;
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.card:hover {
+  border: 1px solid #0C8188;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.facebook{
+  background-image: url(../src/resources/facebook_icon_white.svg);
+  background-repeat: no-repeat;
+  display: block;
+  height: 26.79px;
+}
+
+/* .facebook:hover{
+  background-image: url(../src/resources/facebook_icon_white.svg);
+} */
+
+.twitter{
+  background-image: url(../src/resources/twitter.svg);
+  background-repeat: no-repeat;
+  display: block;
+  height: 26.79px;
+}
+
+.linkedin{
+  background-image: url(../src/resources/linkedin.svg);
+  background-repeat: no-repeat;
+  display: block;
+  height: 26.79px;
+}
+
+.youtube{
+  background-image: url(../src/resources/youtube.svg);
+  background-repeat: no-repeat;
+  display: block;
+  height: 26.79px;
+}
+
+.telegram{
+  background-image: url(../src/resources/telegram.svg);
+  background-repeat: no-repeat;
+  display: block;
+  height: 26.79px;
+}
+
+.site-logo{
+  width: 200px;
+  max-width: 200px;
+}
+
+@media only screen and (max-width: 445px) {
+  .site-logo{
+  width: 150px;
+}
 }

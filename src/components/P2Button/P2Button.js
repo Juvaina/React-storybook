@@ -1,31 +1,33 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import PropTypes from "prop-types";
 
 export default function P2Button(props) {
-  const { variant, size } = props;
+  const { variant, disabled, startIcon, endIcon, ...others } = props;
   return (
-    <Button key={variant} variant={variant} size={size}>
-      Button
-    </Button>
+    <button
+      type="button"
+      className={`${disabled ? getClass(variant) : "btn btn-" + variant} `}
+      disabled={disabled}
+      {...others}
+    >
+      {startIcon}
+      {props.label}
+      {endIcon}
+    </button>
   );
 }
 
-P2Button.propTypes = {
-  size: PropTypes.oneOf(["lg", "sm"]),
-  variant: PropTypes.oneOf([
-    "primary",
-    "secondary",
-    "success",
-    "danger",
-    "warning",
-    "info",
-    "light",
-    "dark",
-  ]),
+const getClass = (variant) => {
+  switch (variant) {
+    case "primary-1":
+      return "btn btn-secondary";
+    case "primary-2":
+      return "btn btn-secondary";
+    case "outline-primary":
+      return "btn btn-outline-secondary";
+    case "link text-decoration-none":
+      return "btn btn-link text-decoration-none";
+  }
 };
 
-P2Button.defaultProps = {
-  size: "lg",
-  variant: "primary",
-};
+P2Button.propTypes = { disabled: PropTypes.bool };

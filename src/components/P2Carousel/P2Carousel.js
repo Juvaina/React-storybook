@@ -1,46 +1,83 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
+import PropTypes from "prop-types";
 
-export default function P2Carousel() {
+export default function P2Carousel(props) {
+  const displaylist = props.displayList;
+  const { cardproperties, buttonContent, buttonClass } = props;
   return (
-    <Carousel>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
-          alt="Second slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+    <div className={"card ecard bg-lighter-teal " + cardproperties}>
+      <div
+        id="carouselExampleIndicators"
+        className="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div className="carousel-indicators">
+          {displaylist.map((display, index) => {
+            return (
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to={index}
+                className={index === 0 ? "active" : ""}
+                aria-current="true"
+                aria-label={`Slide ${index + 1}`}
+              ></button>
+            );
+          })}
+        </div>
+        <div className="carousel-inner">
+          {displaylist.map((display, index) => (
+            <div
+              className={
+                index === 0 ? "carousel-item active" : "carousel-item "
+              }
+            >
+              <div className="card-body px-5">
+                <h5 className="card-title">{display.title}</h5>
+                <p className="card-text">{display.cardcontent}</p>
+                <div className="container d-flex justify-content-center">
+                  <a href="#" className={"w-50 " + buttonClass}>
+                    {buttonContent}
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
   );
 }
+
+P2Carousel.propTypes = {
+  displayList: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      cardcontent: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

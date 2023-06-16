@@ -1,33 +1,63 @@
 import React from "react";
-import Accordion from "react-bootstrap/Accordion";
+import PropTypes from "prop-types";
+import Lock from "../../resources/Icon_Custom_lock.svg";
 
-export default function P2Accordion() {
+export default function P2Accordion(props) {
+  const displaylist = props.displayList;
+  const flush = props.flush;
+  const forSingpass = props.forSingpass;
   return (
-    <Accordion defaultActiveKey="0">
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>Accordion Item #1</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
+    <>
+      <div
+        className={flush ? "accordion accordion-flush" : "accordion"}
+        id="accordionExample"
+      >
+        {displaylist?.map((display, index) => (
+          <div
+            className={flush ? "accordion-item" : "accordion-item shadow mb-2"}
+          >
+            <h2 className="accordion-header">
+              <button
+                className="accordion-button bg-white collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target={"#" + String(index)}
+                aria-expanded="false"
+                aria-controls={String(index)}
+              >
+                {display.heading}
+              </button>
+              {forSingpass ? (
+                <div
+                  className="px-3 mb-2 text-secondary d-flex"
+                  style={{ fontSize: "11px" }}
+                >
+                  <img src={Lock} alt="Lock Icon"></img>
+                  <span>Requires Singpass login</span>
+                </div>
+              ) : (
+                ""
+              )}
+            </h2>
+            <div
+              id={String(index)}
+              className="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div className="accordion-body">{display.content}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
+
+P2Accordion.propTypes = {
+  displayList: PropTypes.arrayOf(
+    PropTypes.shape({
+      heading: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

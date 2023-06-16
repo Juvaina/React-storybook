@@ -1,0 +1,121 @@
+import Tabs from "../components/P2Tab";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+
+<Meta title="Components/Tabs" component={Tabs} />
+
+<h1>Tabs</h1>
+<p>
+  A design approach to visually display large amounts of information in a
+  structured and visually appealing way.
+</p>
+<h3>Folder Tabs</h3>
+
+<h4>Usage</h4>
+<ul>
+  <li>
+    Used to organise 2 main information categories on the landing pages:
+    “Related content” and “Related e-Services”
+  </li>
+  <li>Used to feature long list of content cards</li>
+</ul>
+
+export const Template = (args) => <Tabs {...args} />;
+
+<Canvas>
+  <Story
+    name="Folder Tabs"
+    args={{
+      tabList: [
+        {
+          label: "Page1",
+          href: "/Home",
+          active: true,
+        },
+        {
+          label: "Page2",
+          href: "/Home",
+        },
+      ],
+      tabType: "folderTab",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Tabs} story="Folder Tabs" />
+
+<h3>Text Tabs</h3>
+
+<h4>Usage</h4>
+<ul>
+  <li>
+    Used to feature 2 content category for the “Pulse” section of the HDB
+    InfoWEB for responsive mobile view
+  </li>
+</ul>
+
+<Canvas>
+  <Story
+    name="Text Tabs"
+    args={{
+      tabList: [
+        {
+          label: "Page1",
+          href: "/Home",
+          active: true,
+        },
+        {
+          label: "Page2",
+          href: "/Home",
+        },
+      ],
+      tabType: "textTab",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Tabs} story="Text Tabs" />
+
+<h3>Button Tabs</h3>
+
+<h4>Usage</h4>
+<ul>
+  <li>Used to feature categories for My Inbox</li>
+  <li>
+    Used as a progressive disclosure tab to reveal more content for My HDBPage's
+    My flat and My Vehicle detail pages to reveal related e-Services
+  </li>
+  <li>Use for tabs that requires more than 2 titles or categories</li>
+  <li>Best practice: use maximum of 5 for responsive mobile view</li>
+</ul>
+
+<Canvas>
+  <Story
+    name="Button Tabs"
+    args={{
+      tabList: [
+        {
+          label: "Page1",
+          href: "/Home",
+          active: true,
+        },
+        {
+          label: "Page2",
+          href: "/Home",
+        },
+        {
+          label: "Page3",
+          href: "/Home",
+        },
+      ],
+      tabType: "buttonTab",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Tabs} story="Button Tabs" />

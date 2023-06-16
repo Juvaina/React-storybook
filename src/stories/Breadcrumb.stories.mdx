@@ -1,74 +1,118 @@
 import Breadcrumb from "../components/P2Breadcrumb";
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
 
-<style>
-  {`
-    
-    .h4 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 34px;
-        line-height: 123.5%;
-        letter-spacing: 0.25px;
-    }
-
-    .h5 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 133.4%;
-        letter-spacing: 0px;
-    }
-
-    .h6 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 160%;
-        letter-spacing: 0.15px;
-        color: #20283A;
-    }
-
-    .body {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        letter-spacing: 0.15px;
-    }
-
-    .link {
-        text-decoration: underline;
-    }
-
-    .small {
-        font-size: 15px;
-    }
-
-    .sourceCode {
-        font-family: 'Source Code Pro', 'Segoe UI Mono', 'Courier New', 'Monaco', 'monospace';
-    }
-
-    .sourceCode-background {
-        background-color: #F8F8F8;
-        padding: 2px 4px;
-        border-radius: 4px;
-        border: 1px solid #EEEEEE;
-    }
-
-`}
-</style>
-
 <Meta title="Components/Breadcrumb" component={Breadcrumb} />
 
-<h4 className="h4">Breadcrumb</h4>
+<h1>Breadcrumb</h1>
+<p>
+  Navigational aid that shows the user's location within a website's hierarchy
+</p>
+<h4>Usage</h4>
+<ul>
+  <li>
+    A series of clickable links that show the user the path they took to get to
+    the current page.
+  </li>
+  <li>
+    Alternative way to navigate webpages, specifically for deeper pages within
+    the IA
+  </li>
+  <li>
+    A useful feature for search engine optimization (SEO), as it provides
+    additional context to search engines about the structure of a website.{" "}
+  </li>
+</ul>
 
 export const Template = (args) => <Breadcrumb {...args} />;
 
+<h3>Back to home</h3>
+
 <Canvas>
-  <Story name="Default">{Template.bind({})}</Story>
+  <Story
+    name="Back to home"
+    args={{
+      menuList: [
+        {
+          label: "Back to Home",
+          href: "/Home",
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
+
+<ArgsTable of={Breadcrumb} story="Back to home" />
+
+<h3>Deafult Breadcrumb</h3>
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      menuList: [
+        {
+          label: "Home",
+          href: "/Home",
+        },
+        {
+          label: "Page 2",
+          href: "/Page2",
+        },
+        {
+          label: "Page 3",
+          href: "/Page3",
+        },
+        {
+          label: "Page 4",
+          active: true,
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Breadcrumb} story="Default" />
+
+<h3>Collapsed Breadcrumb</h3>
+
+<Canvas>
+  <Story
+    name="Collapsed"
+    args={{
+      menuList: [
+        {
+          label: "Home",
+          href: "/Home",
+        },
+        {
+          label: "Page 2",
+          href: "/Page2",
+        },
+        {
+          label: "Page 3",
+          href: "/Page3",
+        },
+        {
+          label: "Page 4",
+          href: "/Page4",
+        },
+        {
+          label: "Page 5",
+          href: "/Page5",
+        },
+        {
+          label: "Page 6",
+          active: true,
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Breadcrumb} story="Collapsed" />

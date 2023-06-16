@@ -1,0 +1,35 @@
+import HDB_Logo from "../resources/site-logo-small.png";
+import {
+  DocsContainer,
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+} from "@storybook/addon-docs";
+
+<style>
+  {`
+  .logo {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+    
+`}
+</style>
+
+<Meta title="LOGO/HDB logo" />
+
+export const Template = (args) => (
+  <img src={HDB_Logo} alt="HDB Logo" className="logo" />
+);
+
+<h1>HDB LOGO</h1>
+
+<Canvas>
+  <Story name="Base" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+<ArgsTable story="Base" />

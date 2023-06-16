@@ -1,51 +1,52 @@
 import React from "react";
-import Alert from "react-bootstrap/Alert";
 import PropTypes from "prop-types";
 
 export default function P2Alert(props) {
-  const { variant, icon, link, AdditionalContent } = props;
-  if (AdditionalContent) {
-    return (
-      <Alert variant={variant}>
-        <Alert.Heading>Hey, nice to see you</Alert.Heading>
-        <p>
-          Aww yeah, you successfully read this important alert message. This
-          example text is going to run a bit longer so that you can see how
-          spacing within an alert works with this kind of content.
-        </p>
-        <hr />
-        <p className="mb-0">
-          Whenever you need to, be sure to use margin utilities to keep things
-          nice and tidy.
-        </p>
-      </Alert>
-    );
-  } else {
-    return (
-      <Alert key={variant} variant={variant}>
-        {icon ? <i class="bi bi-exclamation-circle"></i> : ""}
-        &nbsp; This is a {variant} alert &nbsp;
-        {link ? <Alert.Link href="#">with an example link</Alert.Link> : ""}
-      </Alert>
-    );
-  }
+  const variant = props.variant;
+  const cta = props.cta;
+  return (
+    <div className={"alert alert-" + variant} role="alert">
+      {cta ? (
+        <>
+          <div className="d-flex justify-content-between">
+            <div className="d-flex">
+              {getIcon(variant)}
+              <h4 className={"alert-heading fs-md-5 py-2 text-" + variant}>
+                {props.Heading}
+              </h4>
+            </div>
+            <a className="mt-2" href="#">
+              Action
+              <i className="bi bi-chevron-right"></i>
+            </a>
+          </div>
+          <div className="ms-4">{props.children}</div>
+        </>
+      ) : (
+        <>
+          {getIcon(variant)}
+          {props.children}
+        </>
+      )}
+    </div>
+  );
 }
 
-P2Alert.propTypes = {
-  icon: PropTypes.bool,
-  link: PropTypes.bool,
-  AdditionalContent: PropTypes.bool,
-  variant: PropTypes.oneOf([
-    "primary",
-    "secondary",
-    "success",
-    "danger",
-    "warning",
-    "info",
-    "light",
-    "dark",
-  ]),
+const getIcon = (variant) => {
+  switch (variant) {
+    case "success":
+      return <i className="bi bi-check-circle pe-2 mt-1 fs-4 text-success"></i>;
+    case "danger":
+      return (
+        <i className="bi bi-exclamation-triangle pe-2 mt-1 fs-4 text-danger"></i>
+      );
+    case "warning":
+      return (
+        <i className="bi bi-exclamation-circle pe-2 mt-1 fs-4 text-warning"></i>
+      );
+  }
 };
-P2Alert.defaultProps = {
-  variant: "primary",
+
+P2Alert.propTypes = {
+  variant: PropTypes.oneOf(["success", "danger", "warning"]),
 };

@@ -1,7 +1,7 @@
 /** @type { import('@storybook/react').Preview } */
-import storybookTheme from "./storybookTheme.js";
+import "../src/scss/custom.css";
+import "../src/App.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.js";
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 const preview = {
@@ -12,9 +12,6 @@ const preview = {
         color: /(background|color)$/i,
         date: /Date$/,
       },
-    },
-    docs: {
-      theme: storybookTheme,
     },
     options: {
       storySort: {

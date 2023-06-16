@@ -1,0 +1,34 @@
+import Navbar from "../components/P2Navbar";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+
+<Meta title="Components/Navbar" component={Navbar} />
+
+<h1>Navbar</h1>
+
+export const Template = (args) => <Navbar {...args} />;
+
+<Canvas>
+  <Story
+    name="Base"
+    args={{
+      navbarContent: [
+        {
+          url: "https://www.hdb.gov.sg/cs/infoweb/residential/buying-a-flat",
+          name: "Buying a flat",
+        },
+        { url: "#", name: "Managing my home" },
+        {
+          url: "https://www.hdb.gov.sg/cs/infoweb/residential/renting-a-flat",
+          name: "Renting a flat",
+        },
+        { url: "#", name: "Working with HDB" },
+        {
+          url: "https://www.hdb.gov.sg/cs/infoweb/car-parks/season-parking",
+          name: "Parking",
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

@@ -1,74 +1,189 @@
 import Button from "../components/P2Button";
+import ButtonGroup from "../components/P2ButtonGroup";
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
-
-<style>
-  {`
-    
-    .h4 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 34px;
-        line-height: 123.5%;
-        letter-spacing: 0.25px;
-    }
-
-    .h5 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 133.4%;
-        letter-spacing: 0px;
-    }
-
-    .h6 {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 160%;
-        letter-spacing: 0.15px;
-        color: #20283A;
-    }
-
-    .body {
-        font-family: 'cabin', Helvetica, Arial, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        letter-spacing: 0.15px;
-    }
-
-    .link {
-        text-decoration: underline;
-    }
-
-    .small {
-        font-size: 15px;
-    }
-
-    .sourceCode {
-        font-family: 'Source Code Pro', 'Segoe UI Mono', 'Courier New', 'Monaco', 'monospace';
-    }
-
-    .sourceCode-background {
-        background-color: #F8F8F8;
-        padding: 2px 4px;
-        border-radius: 4px;
-        border: 1px solid #EEEEEE;
-    }
-
-`}
-</style>
 
 <Meta title="Components/Button" component={Button} />
 
-<h4 className="h4">Button</h4>
+<h1>Button</h1>
+<p>
+  A button triggers an event or action. They let users know what will happen
+  next.
+</p>
+<h4>Usage</h4>
+<ul>
+  <li>
+    Use primary button (red) for information that needs to “shout” or be
+    highlighted. Examples: Carousel banner, Important Notes on My HDBPage, and
+    Nudges on My HDBPage
+  </li>
+  <li>
+    Use primary button (teal) for action-driven CTAs such as starting an
+    e-Service or initiate further reading
+  </li>
+  <li>Use secondary button as option for more subtle actions</li>
+  <li>
+    Use tertiary button for content cards that requires less prominent CTAs
+  </li>
+</ul>
 
-export const Template = (args) => <Button {...args} />;
+export const Template1 = (args) => <Button {...args} />;
+
+export const Template2 = (args) => <ButtonGroup {...args} />;
 
 <Canvas>
-  <Story name="Default">{Template.bind({})}</Story>
+  <Story
+    name="Action-driver CTA"
+    args={{
+      variant: "primary-1",
+      label: "View Details",
+      disabled: false,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
 </Canvas>
+
+<ArgsTable of={Button} story="Action-driver CTA" />
+
+<Canvas>
+  <Story
+    name="Special CTA"
+    args={{
+      variant: "primary-2",
+      label: "View Details",
+      disabled: false,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Button} story="Special CTA" />
+
+<Canvas>
+  <Story
+    name="Alternate CTA"
+    args={{
+      variant: "outline-primary",
+      label: "Cancel",
+      disabled: false,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Button} story="Alternate CTA" />
+
+<Canvas>
+  <Story
+    name="Content CTA"
+    args={{
+      variant: "link text-decoration-none",
+      label: "Click to learn more >",
+      disabled: false,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Button} story="Content CTA" />
+
+<h3>Buttons with icon</h3>
+<p>
+  Visual approach for buttons to help reinforce an action that will be the
+  result of clicking a button
+</p>
+<h4>Usage</h4>
+<ul>
+  <li>
+    Use for CTA buttons that require user action, such as “Login”, "Choose
+    files" or "Select from Map"
+  </li>
+  <li>
+    Use Text and icon button for more subtle button requirements such as
+    “download”, “delete” - Refer to use case
+  </li>
+</ul>
+
+<Canvas>
+  <Story
+    name="Login"
+    args={{
+      variant: "primary-2",
+      label: "Login",
+      startIcon: <i className="bi bi-lock-fill pe-2"></i>,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Button} story="Login" />
+
+<Canvas>
+  <Story
+    name="Logout"
+    args={{
+      variant: "primary-2",
+      label: "Logout",
+      startIcon: <i className="bi bi-box-arrow-right pe-2"></i>,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Button} story="Logout" />
+
+<Canvas>
+  <Story
+    name="Choose Files"
+    args={{
+      variant: "primary-1",
+      label: "Choose Files",
+      endIcon: <i className="bi bi-paperclip ps-2"></i>,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Button} story="Choose Files" />
+
+<Canvas>
+  <Story
+    name="Select from Map"
+    args={{
+      variant: "primary-1",
+      label: "Choose Files",
+      endIcon: <i className="bi bi-geo-alt ps-2"></i>,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Button} story="Select from Map" />
+
+<Canvas>
+  <Story
+    name="View more"
+    args={{
+      variant: "outline-primary",
+      label: "View more",
+      endIcon: <i className="bi bi-plus-circle-fill ps-2"></i>,
+    }}
+  >
+    {Template1.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Button} story="View more" />
+
+<Canvas>
+  <Story name="Font Resizer">{Template2.bind({})}</Story>
+</Canvas>
+
+<ArgsTable of={ButtonGroup} story="Font Resizer" />
