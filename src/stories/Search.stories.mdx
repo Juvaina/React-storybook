@@ -1,0 +1,32 @@
+import Search from "../components/P2Search";
+import {
+  DocsContainer,
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+} from "@storybook/addon-docs";
+
+<Meta title="Components/Search" component={Search} />
+
+<h1>Search</h1>
+
+<p>
+  An input field that allows users to enter keywords or phrases to search for
+  content on a website.
+</p>
+<h4>Usage</h4>
+<ul>
+  <li>
+    Input field that allows users to enter keywords or phrases to generate
+    search results
+  </li>
+</ul>
+
+export const Template = (args) => <Search {...args} />;
+
+<Canvas>
+  <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable of={Search} story="Base" />

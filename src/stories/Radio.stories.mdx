@@ -1,0 +1,48 @@
+import Radio from "../components/P2Radio";
+import {
+  DocsContainer,
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+} from "@storybook/addon-docs";
+
+<Meta title="Forms/Radio" component={Radio} />
+
+<h1>Radio</h1>
+
+<p>
+  Used to display a list of options where people can only make a single
+  selection
+</p>
+<h4>Usage</h4>
+<ul>
+  <li>
+    Used in filling up forms that requires users to select only a single option
+    from a given list
+  </li>
+  <li>Used for Yes/No questions</li>
+</ul>
+
+export const Template = (args) => <Radio {...args} />;
+
+<Canvas>
+  <Story
+    name="Base"
+    args={{
+      radioItem: [
+        {
+          label: "Yes",
+          checked: true,
+        },
+        {
+          label: "No",
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Radio} story="Base" />

@@ -1,0 +1,166 @@
+import Input from "../components/P2Input/B2Input";
+import {
+  DocsContainer,
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+} from "@storybook/addon-docs";
+
+<style>
+  {`
+    
+    .h4 {
+        font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 123.5%;
+        letter-spacing: 0.25px;
+    }
+
+    .h5 {
+        font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 133.4%;
+        letter-spacing: 0px;
+    }
+
+    .h6 {
+        font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 160%;
+        letter-spacing: 0.15px;
+        color: #20283A;
+    }
+
+    .body {
+        font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0.15px;
+    }
+
+    .link {
+        text-decoration: underline;
+    }
+
+    .small {
+        font-size: 15px;
+    }
+
+    .sourceCode {
+        font-family: 'Source Code Pro', 'Segoe UI Mono', 'Courier New', 'Monaco', 'monospace';
+    }
+
+    .sourceCode-background {
+        background-color: #F8F8F8;
+        padding: 2px 4px;
+        border-radius: 4px;
+        border: 1px solid #EEEEEE;
+    }
+
+`}
+</style>
+
+<Meta title="Forms/Input" component={Input} />
+
+<h4 className="h4">Input</h4>
+
+export const Template = (args) => <Input {...args}></Input>;
+
+<Canvas>
+  <Story
+    name="Base"
+    args={{
+      type: "email",
+      placeholder: "email",
+      mode: "right",
+      suffixLabel: "true",
+      prefixLabel: "true",
+      addonLeftLabel: "@",
+      addonRightLabel: "@",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Prefix"
+    args={{ type: "email", placeholder: "email", prefixLabel: "true" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Suffix"
+    args={{ type: "search", placeholder: "email", suffixLabel: "true" }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Both Prefix & Suffix"
+    args={{
+      type: "email",
+      placeholder: "email",
+      suffixLabel: "true",
+      prefixLabel: "true",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Addon Left"
+    args={{
+      type: "email",
+      placeholder: "email",
+      mode: "left",
+      addonLeftLabel: "@",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Addon Right"
+    args={{
+      type: "email",
+      placeholder: "email",
+      mode: "right",
+      addonRightLabel: "#",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Addon Right & Left"
+    args={{
+      type: "email",
+      placeholder: "email",
+      mode: "right",
+      addonRightLabel: "#",
+      addonLeftLabel: "@",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Both"
+    args={{
+      type: "email",
+      placeholder: "email",
+      mode: "right",
+      addonRightLabel: "#",
+      addonLeftLabel: "@",
+      suffixLabel: "true",
+      prefixLabel: "true",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Input} story="Base" />

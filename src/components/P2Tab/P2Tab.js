@@ -25,7 +25,7 @@ export default function P2Tab(props) {
       ) : (
         <>
           {tabType === "textTab" ? (
-            <ul class="nav nav-underline">
+            <ul className="nav nav-underline">
               {tabList.map((menu) => (
                 <li className="nav-item w-25">
                   <a

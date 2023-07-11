@@ -1,0 +1,65 @@
+
+@font-face {
+  font-family: 'Cabin';  
+  src: url("../src/resources/cabin-regular-webfont.eot");
+  src: local('Cabin Regular'), local('Cabin-Regular'), url("../src/resources/cabin-regular-webfont.eot?open#iefix") format("embedded-opentype"), url("../src/resources/cabin-regular-webfont.woff") format("woff"), url("../src/resources/cabin-regular-webfont.ttf") format("truetype"), url("../src/resources/cabin-regular-webfont.svg") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+  
+  .icon-youtube-play:before {
+    content: "\f16a";
+  }
+  .icon-twitter:before {
+    content: "\e608";
+  }
+  .icon-twitter-inverse:before {
+    content: "\e609";
+  }
+  .icon-facebook-inverse:before {
+    content: "\e60a";
+  }
+  .icon-facebook:before {
+    content: "\e610";
+  }
+  
+    
+    /* .icon {
+      float: left;
+      margin: 3px;
+    } */
+  
+      
+
+  /* .icon {
+      font-size: 23px;
+      font-size: 2.3rem;
+      margin-top: 3px; }   */
+  
+   
+     .icon {
+        position: absolute;
+        top: 13px;
+        left: 15px;
+        width: 21px;
+        height: 21px;
+        display: block;
+        text-align: center;
+        line-height: 1.6;
+        overflow: hidden;
+        font-size: 16px;
+        font-size: 1.6rem; }
+  /* .icon-remove:before {
+     content: '\e60f';
+  
+  }
+     
+.icon {
+      position: absolute;
+      top: 12px;
+      right: 10px;
+      font-size: 20px;
+      font-size: 2rem;
+    } */
+
+    
+    

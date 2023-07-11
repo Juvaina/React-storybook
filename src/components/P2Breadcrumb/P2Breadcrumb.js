@@ -8,7 +8,7 @@ export default function P2Breadcrumb(props) {
       <ol className="breadcrumb">
         {menuList.length == 1 ? (
           <li className="breadcrumb-item">
-            <a class="text-decoration-none" href={menuList[0].href}>
+            <a className="text-decoration-none" href={menuList[0].href}>
               <i className="bi bi-chevron-left"></i>
               {menuList[0].label}
             </a>
@@ -28,7 +28,7 @@ export default function P2Breadcrumb(props) {
                       </li>
                     ) : (
                       <li className="breadcrumb-item">
-                        <a class="text-decoration-none" href={menu.href}>
+                        <a className="text-decoration-none" href={menu.href}>
                           {menu.label}
                         </a>
                       </li>
@@ -63,7 +63,7 @@ const CollapseBreadcrumb = (menu) => {
       {isCollapse ? (
         <>
           <li className="breadcrumb-item">
-            <a class="text-decoration-none" href={menu[0].href}>
+            <a className="text-decoration-none" href={menu[0].href}>
               {menu[0].label}
             </a>
           </li>
@@ -71,7 +71,7 @@ const CollapseBreadcrumb = (menu) => {
             ...
           </li>
           <li className="breadcrumb-item">
-            <a class="text-decoration-none" href={menu[length - 2].href}>
+            <a className="text-decoration-none" href={menu[length - 2].href}>
               {menu[length - 2].label}
             </a>
           </li>
@@ -89,7 +89,7 @@ const CollapseBreadcrumb = (menu) => {
                 </li>
               ) : (
                 <li className="breadcrumb-item">
-                  <a class="text-decoration-none" href={menu.href}>
+                  <a className="text-decoration-none" href={menu.href}>
                     {menu.label}
                   </a>
                 </li>

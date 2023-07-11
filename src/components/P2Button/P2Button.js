@@ -11,7 +11,7 @@ export default function P2Button(props) {
       {...others}
     >
       {startIcon}
-      {props.label}
+      {props.children}
       {endIcon}
     </button>
   );
@@ -30,4 +30,12 @@ const getClass = (variant) => {
   }
 };
 
-P2Button.propTypes = { disabled: PropTypes.bool };
+P2Button.propTypes = {
+  disabled: PropTypes.bool,
+  variant: PropTypes.oneOf([
+    "primary-1",
+    "primary-2",
+    "outline-primary",
+    "link text-decoration-none",
+  ]),
+};

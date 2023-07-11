@@ -6,7 +6,7 @@ const showCurrentYear = () => {
 
 export default function P2Footer() {
   return (
-    <div>
+    <div className="mt-5">
       <div
         style={{
           backgroundColor: "#323232",

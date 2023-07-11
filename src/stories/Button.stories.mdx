@@ -26,16 +26,15 @@ import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
   </li>
 </ul>
 
-export const Template1 = (args) => <Button {...args} />;
+export const Template1 = (args) => <Button {...args}>Button</Button>;
 
 export const Template2 = (args) => <ButtonGroup {...args} />;
 
 <Canvas>
   <Story
-    name="Action-driver CTA"
+    name="Base"
     args={{
       variant: "primary-1",
-      label: "View Details",
       disabled: false,
     }}
   >
@@ -43,52 +42,7 @@ export const Template2 = (args) => <ButtonGroup {...args} />;
   </Story>
 </Canvas>
 
-<ArgsTable of={Button} story="Action-driver CTA" />
-
-<Canvas>
-  <Story
-    name="Special CTA"
-    args={{
-      variant: "primary-2",
-      label: "View Details",
-      disabled: false,
-    }}
-  >
-    {Template1.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable of={Button} story="Special CTA" />
-
-<Canvas>
-  <Story
-    name="Alternate CTA"
-    args={{
-      variant: "outline-primary",
-      label: "Cancel",
-      disabled: false,
-    }}
-  >
-    {Template1.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable of={Button} story="Alternate CTA" />
-
-<Canvas>
-  <Story
-    name="Content CTA"
-    args={{
-      variant: "link text-decoration-none",
-      label: "Click to learn more >",
-      disabled: false,
-    }}
-  >
-    {Template1.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable of={Button} story="Content CTA" />
+<ArgsTable of={Button} story="Base" />
 
 <h3>Buttons with icon</h3>
 <p>
@@ -109,10 +63,9 @@ export const Template2 = (args) => <ButtonGroup {...args} />;
 
 <Canvas>
   <Story
-    name="Login"
+    name="Button with left icon"
     args={{
       variant: "primary-2",
-      label: "Login",
       startIcon: <i className="bi bi-lock-fill pe-2"></i>,
     }}
   >
@@ -120,29 +73,13 @@ export const Template2 = (args) => <ButtonGroup {...args} />;
   </Story>
 </Canvas>
 
-<ArgsTable of={Button} story="Login" />
+<ArgsTable of={Button} story="Button with left icon" />
 
 <Canvas>
   <Story
-    name="Logout"
-    args={{
-      variant: "primary-2",
-      label: "Logout",
-      startIcon: <i className="bi bi-box-arrow-right pe-2"></i>,
-    }}
-  >
-    {Template1.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable of={Button} story="Logout" />
-
-<Canvas>
-  <Story
-    name="Choose Files"
+    name="Button with right icon"
     args={{
       variant: "primary-1",
-      label: "Choose Files",
       endIcon: <i className="bi bi-paperclip ps-2"></i>,
     }}
   >
@@ -150,37 +87,7 @@ export const Template2 = (args) => <ButtonGroup {...args} />;
   </Story>
 </Canvas>
 
-<ArgsTable of={Button} story="Choose Files" />
-
-<Canvas>
-  <Story
-    name="Select from Map"
-    args={{
-      variant: "primary-1",
-      label: "Choose Files",
-      endIcon: <i className="bi bi-geo-alt ps-2"></i>,
-    }}
-  >
-    {Template1.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable of={Button} story="Select from Map" />
-
-<Canvas>
-  <Story
-    name="View more"
-    args={{
-      variant: "outline-primary",
-      label: "View more",
-      endIcon: <i className="bi bi-plus-circle-fill ps-2"></i>,
-    }}
-  >
-    {Template1.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable of={Button} story="View more" />
+<ArgsTable of={Button} story="Button with right icon" />
 
 <Canvas>
   <Story name="Font Resizer">{Template2.bind({})}</Story>

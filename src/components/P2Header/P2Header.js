@@ -124,13 +124,21 @@ export default function P2Header() {
           </div>
           {toggleSearch ? (
             <div className="container d-flex">
-              <input
-                className="form-control form-control-lg"
-                type="text"
-                placeholder="Search our website"
-                aria-label=".form-control-lg example"
-              />
-              <i className="bi bi-search"></i>
+              <div className="input-group flex-nowrap">
+                <input
+                  type="search"
+                  className="form-control form-control-lg border border-0"
+                  placeholder="Search our website"
+                  aria-label=".form-control-lg example"
+                  aria-describedby="addon-wrapping"
+                />
+                <span
+                  className="input-group-text bg-white border-0"
+                  id="addon-wrapping"
+                >
+                  <i className="bi bi-search"></i>
+                </span>
+              </div>
             </div>
           ) : (
             ""

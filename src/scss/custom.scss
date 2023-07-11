@@ -18,7 +18,8 @@ $custom-colors: (
   "primary-2": #C3141E,
   "lighter-teal": #EFF8FA,
   "light-teal": #64C8C8,
-  "dark-teal": #085054
+  "dark-teal": #085054,
+  "neutral" :#AAAAAA
 );
 
 // Merge the maps
@@ -90,6 +91,15 @@ $utilities: (
 .carousel-control-next-icon {
   width: 1rem !important;
   height: 1rem !important;
+}
+
+.pagination {
+  --bs-pagination-border-color: none !important;
+}
+
+.accordion-button:focus {
+  border-color: none !important;
+  box-shadow: none !important;
 }
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
